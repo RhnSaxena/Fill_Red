@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	include "./DB/DbConnection.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -97,13 +98,54 @@
 			<div class="card center margin align-row">
 				<div class="center align-row">
 					<div class="margin">
-						<i class="fas fa-thumbs-up fa-3x"></i><h4>Blood Donors</h4><span>Numbers</span>
+						<i class="fas fa-thumbs-up fa-3x"></i><h4>Blood Donors</h4>
+						<span>
+							<?php
+								$query='SELECT count(donor.dId) as number_of_donors FROM donor';
+								$result = mysqli_query($connection,$query);
+								if(mysqli_num_rows($result)>0){
+									while ($row = mysqli_fetch_array($result)) {
+										echo $row['number_of_donors']." ";
+									}
+								}
+								else{
+									echo"0 ";
+								}
+							?></span>
 					</div>
 					<div class="margin">
-						<i class="fas fa-hand-holding-heart fa-3x"></i><h4>Blood Requests</h4><span>Numbers</span>
+						<i class="fas fa-hand-holding-heart fa-3x"></i><h4>Blood Requests</h4>
+						<span>
+							<?php
+								$query='SELECT count(*) as number_of_request FROM request';
+								$result = mysqli_query($connection,$query);
+								if(mysqli_num_rows($result)>0){
+									while ($row = mysqli_fetch_array($result)) {
+										echo $row['number_of_request']." ";
+									}
+								}
+								else{
+									echo"0 ";
+								}
+							?>
+						</span>
 					</div>
 					<div class="margin">
-						<i class="fas fa-hand-holding-heart fa-3x"></i><h4>Active Donors</h4><span>Numbers</span>
+						<i class="fas fa-hand-holding-heart fa-3x"></i><h4>Active Donors</h4>
+						<span>
+						<?php
+								$query='SELECT count(*) as number_of_active_donors FROM volunteer';
+								$result = mysqli_query($connection,$query);
+								if(mysqli_num_rows($result)>0){
+									while ($row = mysqli_fetch_array($result)) {
+										echo $row['number_of_active_donors']." ";
+									}
+								}
+								else{
+									echo"0 ";
+								}
+							?>
+						</span>
 					</div>
 				</div>
 			</div>
