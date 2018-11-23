@@ -5,11 +5,26 @@
 pid: <input type="text" name="pid"><br>
 pFNAME: <input type="text" name="pFNAME"><br>
 PLNAME: <input type="text" name="PLNAME"><br>
-pSEX: <input type="text" name="pSEX"><br>
+pSEX: 	<select  name="pSEX" required id="pSEX">
+										<option></option>
+										<option value="MALE">MALE</option>
+										<option value="FEMALE">FEMALE</option>
+										<option value="OTHERS">OTHERS</option>
+										</select><br>
 pAge: <input type="text" name="pAge"><br>
 pAddress: <input type="text" name="pAddress"><br>
 pPhoneNo: <input type="text" name="pPhoneNo"><br>
-pBloodGroup: <input type="text" name="pBloodGroup"><br>
+pBloodGroup: <select name="pBloodGroup" required id="pBloodGroup" class="form-control">
+										<option></option>
+										<option value="A+">A+</option>
+										<option value="A-">A-</option>
+										<option value="A+">B+</option>
+										<option value="A-">B-</option>
+										<option value="A+">AB+</option>
+										<option value="A-">AB-</option>
+										<option value="A+">O+</option>
+										<option value="A-">O-</option>
+										</select><br>
 p_pincode: <input type="text" name="p_pincode"><br>
 p_city: <input type="text" name="p_city"><br>
 

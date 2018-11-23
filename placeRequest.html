@@ -7,7 +7,17 @@
 			Haven't registered yet?<a href="insertPatient.html"> Register here</a>
 			FNAME: <input type="text" name="pFname"><br>
 			LNAME: <input type="text" name="pLname"><br>
-			BloodGroup: <input type="text" name="pBloodGroup"><br>
+			BloodGroup:<select name="pBloodGroup" required id="pBloodGroup" class="form-control">
+										<option></option>
+										<option value="A+">A+</option>
+										<option value="A-">A-</option>
+										<option value="B+">B+</option>
+										<option value="B-">B-</option>
+										<option value="AB+">AB+</option>
+										<option value="AB-">AB-</option>
+										<option value="O+">O+</option>
+										<option value="O-">O-</option>
+										</select><br>
 			Units: <input type="text" name="units"><br>
 
 		  <input type="submit" value="Submit">

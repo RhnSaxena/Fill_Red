@@ -90,7 +90,7 @@
 					<h2>Want to become a Donor?</h2>
 				</div>
 				<div class="col margin-4">
-					<a href="registerVolunteer.php"><button class="red-button" onclick="">Register Now</button></a>
+					<a href="registerVolunteer.html"><button class="red-button" onclick="">Register Now</button></a>
 				</div>
 			</div>
 		</div>
