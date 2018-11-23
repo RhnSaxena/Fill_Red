@@ -37,7 +37,7 @@
 				<div class="card-header">
 					<ul>
 						<li>
-							Search Donar
+							Search Donor
 						</li>
 						<li>
 							About Us
@@ -55,32 +55,63 @@
 				</div>
 			</div>
 		</div>
-		<div class="row red border full">
+		<div class="row red border">
 			<div class="content">
 				<h2>Search Blood Donors</h2>
 				<div class="main-form">
-				<form action="login.php" method="POST">
-					<div class="form-group">
-						<label for="signin-email" class=" sr-only">Email</label>
-						<input type="text" class="form-control" name="username" id="username" placeholder="Username">
+					<form action="login.php" method="POST">
+						<div class="col">
+							<select name="bloodGroup" class="input">
+							<option value="select">Select Blood Group</option>
+							<option value="a+">A+</option>
+							<option value="a-">A-</option>
+							<option value="b+">B+</option>
+							<option value="b-">B-</option>
+							<option value="o+">O+</option>
+							<option value="o-">O-</option>
+							<option value="ab+">AB+</option>
+							<option value="ab-">AB-</option>
+							</select>
+						</div>
+						<div class="col text-left">
+							<input type="text"  id="city" name="password" placeholder="City" class="input">
+						</div>
+						<div class="col margin-4"><button type="submit" class="input">Search</button></div>
+					</form>
+					<div class="margin-60">
+						<h4>*Terms and Conditions apply</h4>
 					</div>
-					<div class="form-group">
-						<label for="signin-password" class=" sr-only">Password</label>
-						<input type="password" class="form-control" id="password" name="password" placeholder="Password">
-					</div>
-					<div class="form-group"	>
-						<label class="element-left">
-							<input type="checkbox" class="chek">
-							<span>Remember me</span>
-						</label>
-					</div>
-					<button type="submit" class="btn">LOGIN</button>
-				</form>
+				</div>
 			</div>
+			<hr class="hr">
+			<div class="text-left content align-row">
+				<div class="col">
+					<h2>Want to become a Donor?</h2>
+				</div>
+				<div class="col margin-4">
+					<a href="registerVolunteer.php"><button class="red-button" onclick="">Register Now</button></a>
+				</div>
 			</div>
 		</div>
-		<div class="footer">
-			
+		<div class="row text-center padding">
+			<div class="card center margin align-row">
+				<div class="center align-row">
+					<div class="margin">
+						<i class="fas fa-thumbs-up fa-3x"></i><h4>Blood Donors</h4><span>Numbers</span>
+					</div>
+					<div class="margin">
+						<i class="fas fa-hand-holding-heart fa-3x"></i><h4>Blood Requests</h4><span>Numbers</span>
+					</div>
+					<div class="margin">
+						<i class="fas fa-hand-holding-heart fa-3x"></i><h4>Active Donors</h4><span>Numbers</span>
+					</div>
+				</div>
+			</div>
+			<div class="align-row">
+				<div class="card margin"> <h3>Blood Donate Tips</h3></div>
+				<div class="card margin"> <h3>Blood Requests</h3></div>
+				<div class="card margin"> <h3>Recent Donors</h3></div>
+			</div>
 		</div>
 	</div>
 </body>
