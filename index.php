@@ -151,7 +151,30 @@
 			</div>
 			<div class="align-row">
 				<div class="card margin"> <h3>Blood Donate Tips</h3></div>
-				<div class="card margin"> <h3>Blood Requests</h3></div>
+				<div class="card margin">
+					<h3>Blood Requests</h3>
+					<div class=align-row>
+					<?php
+								$query='SELECT * 
+								FROM request,patient 
+								WHERE request.pId=patient.pId';
+								
+								$result = mysqli_query($connection,$query);
+								if(mysqli_num_rows($result)>0){
+									while ($row = mysqli_fetch_array($result)) {
+										echo '<div class="float-left">'.$row['pFName'].' '.$row['pLName'].'</div>';
+										echo '<div class="float-center">'.$row['pSex'].'</div>';
+										echo '<div class="float-right">'.$row['pBloodGroup'].'</div>';
+										echo "<br><br>";
+									}
+								}
+								else{
+									echo"0 ";
+								}
+							?>
+					</div>
+				
+				</div>
 				<div class="card margin"> <h3>Recent Donors</h3></div>
 			</div>
 		</div>
