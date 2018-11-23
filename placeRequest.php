@@ -2,14 +2,14 @@
 
 session_start();
 include "./DB/DbConnection.php";
-$query='SELECT * FROM DONOR WHERE DONOR.dId="'.$_POST['dId'].'"';
+$_POST['date']=date("Y-m-d");
+$query='SELECT * FROM patient WHERE patient.pId="'.$_POST['pId'].'"';
 $result = mysqli_query($connection,$query);
-$_POST['donationDate']=date("Y-m-d");
 if(mysqli_num_rows($result)>0){
 	while ($row = mysqli_fetch_array($result)) {
-			if($row['dFname']==$_POST['dFname'] && $row['dLname']==$_POST['dLname']){
-				if($row['DBloodGroup']==$_POST['DBloodGroup']){
-					$sql='INSERT INTO blood VALUES ("'.$_POST['bId'].'","'.$_POST['bType'].'","'.$_POST['donationDate'].'","'.$_POST['dId'].'")';
+			if($row['pFName']==$_POST['pFname'] && $row['pLName']==$_POST['pLname']){
+				if($row['pBloodGroup']==$_POST['pBloodGroup']){
+					$sql='INSERT INTO request VALUES ("'.$_POST['rid'].'","'.$_POST['pId'].'","'.$_POST['date'].'","'.$_POST['units'].'")';
 					echo $sql."<br><br>";
 					mysqli_query($connection,$sql);
 					echo "<br><br>";
@@ -23,5 +23,6 @@ if(mysqli_num_rows($result)>0){
 else{
 	echo"did doesn't exist";
 }
+
 
 ?>
