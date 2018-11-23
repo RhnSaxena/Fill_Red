@@ -1,0 +1,14 @@
+.black-text{
+	color: black;
+}
+
+.form-control {
+  height: 30px;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 5px;
+  border:1px solid black;
+  border-radius: 3px;
+  width: 100%;
+  margin: 5px;
+}
