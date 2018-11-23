@@ -1,12 +1,18 @@
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname="BloodBank";
+$user = "root";
+$password = "";
+$host = "localhost";
 
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+//connection to the database
+//$dbhandle = mysql_connect($hostname, $username, $password)
+$connection = mysqli_connect('localhost', 'root', '','bloodbank');
+ //or die(mysql_error());
 
+//select a database to work 
+$db = "bloodbank";
+$selected = mysqli_select_db($connection,"bloodbank") 
+  or die(mysqli_error($selected));
 ?>
+
+
+	
