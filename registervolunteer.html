@@ -33,47 +33,55 @@
 		<div class="row text-center">
 			<center><img class="head-img" src="blood-bank.png"></center>
 		</div>
+		<div class="row">
+			<span class=""><a href="./index.php">Home</a>/Register Volunteer</span>
+		</div>
 		<div class="row card black-text border">
-			<div class="black-text">
-				<h2>Register Volunteers</h2>
-				<div>
-					<form action="registerVolunteer.php" method="post" class="align-column width">
+			<div class="black-text padding">
+				<h2 class="heading">Register Volunteers</h2>
+				<div class="row">
+					<form action="registerVolunteer.php" method="post" class="align-column">
+
 						<div class="align-row">
-							<div class="col">
-								<input type="text" name="dId" placeholder="Identity" class="form-control">
+							<div class="col margin-auto">
+								<input class="form-control form-text" type="text" name="dId" placeholder="Identity">
 							</div>
-							<div class="col">
-								<input type="text" name="dFname" placeholder="First name" class="form-control">
+							<div class="col margin-auto">
+								<input class="form-control form-text" type="text" name="dFname" placeholder="First name">
 							</div>
 						</div>
+
 						<div class="align-row">
-							<div class="col">
-								<input type="text" name="dLname" placeholder="Last Name" class="form-control">
+							<div class="col margin-auto">
+								<input class="form-control form-text" type="text" name="dLname" placeholder="Last Name">
 							</div>
-							<div class="col">
-								<select name="dSex" required id="dSex" class="form-control">
-										<option></option>
+							<div class="col margin-auto">
+								<select class="form-control form-text" name="dSex" required id="dSex">
+										<option> Gender</option>
 										<option value="MALE">MALE</option>
 										<option value="FEMALE">FEMALE</option>
 										<option value="OTHERS">OTHERS</option>
-										</select><br>
+										</select>
 							</div>
 						</div>
+						
+
 						<div class="align-row">
-							<div class="col">
-								<input type="text" name="dAge" placeholder="Age" class="form-control">
+							<div class="col margin-auto">
+								<input class="form-control form-text" type="text" name="dAge" placeholder="Age">
 							</div>
-							<div class="col">
-								<input type="text" name="dAddress" placeholder="Address" class="form-control">
+							<div class="col margin-auto">
+								<input class="form-control form-text" type="text" name="dAddress" placeholder="Address">
 							</div>
 						</div>
+
 						<div class="align-row">
-							<div class="col">
-								<input type="text" name="dPhoneNo" placeholder="Phone Number" class="form-control">
+							<div class="col margin-auto">
+								<input class="form-control form-text" type="text" name="dPhoneNo" placeholder="Phone Number">
 							</div>
-							<div class="col">
-								<select name="DBloodGroup" required id="DBloodGroup" class="form-control">
-										<option></option>
+							<div class=" col margin-auto">
+								<select class="form-control form-text" name="DBloodGroup" required id="DBloodGroup">
+										<option>Blood Group</option>
 										<option value="A+">A+</option>
 										<option value="A-">A-</option>
 										<option value="B+">B+</option>
@@ -82,18 +90,20 @@
 										<option value="AB-">AB-</option>
 										<option value="O+">O+</option>
 										<option value="O-">O-</option>
-										</select><br>
+										</select>
 							</div>
 						</div>
+
 						<div class="align-row">
-							<div class="col">
-								<input type="text" name="dPincode" placeholder="Pin Code" class="form-control">
+							<div class="col margin-auto">
+								<input class="form-control form-text" type="text" name="dPincode" placeholder="Pin Code">
 							</div>
-							<div class="col">
-								<input type="text" name="dCity" placeholder="City" class="form-control">
+							<div class="col margin-auto">
+								<input class="form-control form-text" type="text" name="dCity" placeholder="City">
 							</div>
 						</div>
-						<input type="submit" value="Submit">
+
+						<input class="form-control form-text" type="submit" value="Submit">-->
 					</form>
 				</div>
 			</div>

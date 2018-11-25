@@ -60,7 +60,7 @@
 			<div class="content">
 				<h2>Search Blood Donors</h2>
 				<div class="main-form">
-					<form action="login.php" method="POST">
+					<form action="search.php" method="POST">
 						<div class="col">
 							<select name="bloodGroup" class="input">
 							<option value="select">Select Blood Group</option>
@@ -74,9 +74,6 @@
 							<option value="ab-">AB-</option>
 							</select>
 						</div>
-						<div class="col text-left">
-							<input type="text"  id="city" name="password" placeholder="City" class="input">
-						</div>
 						<div class="col margin-4"><button type="submit" class="input">Search</button></div>
 					</form>
 					<div class="margin-60">
@@ -87,7 +84,7 @@
 			<hr class="hr">
 			<div class="text-left content align-row">
 				<div class="col">
-					<h2>Want to become a Donor?</h2>
+					<h2>Want to become a Volunteer?</h2>
 				</div>
 				<div class="col margin-4">
 					<a href="registerVolunteer.html"><button class="red-button" onclick="">Register Now</button></a>
@@ -99,7 +96,7 @@
 				<div class="center align-row">
 					<div class="margin">
 						<i class="fas fa-thumbs-up fa-3x"></i><h4>Blood Donors</h4>
-						<span>
+						<span class="highlight">
 							<?php
 								$query='SELECT count(donor.dId) as number_of_donors FROM donor';
 								$result = mysqli_query($connection,$query);
@@ -115,7 +112,7 @@
 					</div>
 					<div class="margin">
 						<i class="fas fa-hand-holding-heart fa-3x"></i><h4>Blood Requests</h4>
-						<span>
+						<span class="highlight">
 							<?php
 								$query='SELECT count(*) as number_of_request FROM request';
 								$result = mysqli_query($connection,$query);
@@ -132,7 +129,7 @@
 					</div>
 					<div class="margin">
 						<i class="fas fa-hand-holding-heart fa-3x"></i><h4>Active Donors</h4>
-						<span>
+						<span class="highlight">
 						<?php
 								$query='SELECT count(*) as number_of_active_donors FROM volunteer';
 								$result = mysqli_query($connection,$query);
@@ -153,7 +150,7 @@
 				<div class="card margin"> <h3>Blood Donate Tips</h3></div>
 				<div class="card margin">
 					<h3>Blood Requests</h3>
-					<div class="align-cloumn padding margin">
+					<div class="padding margin">
 					<?php
 								$query='SELECT * 
 								FROM request,patient 
@@ -162,10 +159,11 @@
 								$result = mysqli_query($connection,$query);
 								if(mysqli_num_rows($result)>0){
 									while ($row = mysqli_fetch_array($result)) {
-										echo '<div class="align-row"><div class="float-left">'.$row['pFName'].' '.$row['pLName'].'</div>';
-										echo '<div class="float-center">'.$row['pSex'].'</div>';
-										echo '<div class="float-right">'.$row['pBloodGroup'].'</div></div>';
-										echo "<br><br>";
+										echo '<div class="align-row row-3">
+											<div class="float-left col">'.$row['pFName'].' '.$row['pLName'].'</div>';
+										echo '<div class="float-center col">'.$row['pSex'].'</div>';
+										echo '<div class="float-right col"><span class="red-text">'.$row['pBloodGroup'].' </span><i class="fas fa-info-circle margin"></i></div></div>';
+										echo "<br>";
 									}
 								}
 								else{
