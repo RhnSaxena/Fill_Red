@@ -56,7 +56,7 @@
 								}
 							}
 							else{
-								echo"No Donors Available at the mmoment.";
+								echo"No Donors Available at the moment.";
 								}
 						}
 					?>
