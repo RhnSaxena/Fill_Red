@@ -38,7 +38,7 @@
 				<div class="card-header">
 					<ul>
 						<li>
-							Search Donor
+							<a href="placeRequest.html">Request Blood</a>
 						</li>
 						<li>
 							About Us
