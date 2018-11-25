@@ -41,16 +41,13 @@
 							<a href="placeRequest.html">Request Blood</a>
 						</li>
 						<li>
-							About Us
-						</li>
-						<li>
 							<a href="checkRequests.php">Check Your Requests</a>
 						</li>
 						<li>
-							Blood Tips
+							<a>About Us</a>
 						</li>
 						<li>
-							Contact Us
+							<a>Contact Us</a>
 						</li>
 					</ul>
 				</div>
@@ -147,7 +144,25 @@
 				</div>
 			</div>
 			<div class="align-row">
-				<div class="card margin"> <h3>Blood Donate Tips</h3></div>
+				<div class="card margin"> <h3>Blood Donate Tips</h3><br>
+					<ol ">
+						<li class="margin-4">
+							Eat and drink wisely
+						</li><br>
+						<li class="margin-4">
+							Face your fears if you're scared of needles
+						</li><br>
+						<li class="margin-4">
+							Come prepared
+						</li><br>
+						<li class="margin-4">
+							Dress for success
+						</li><br>
+						<li class="margin-4">
+							Take your time
+						</li>
+					</ol>
+				</div>
 				<div class="card margin">
 					<h3><a href="Requests.php">Blood Requests</a></h3>
 					<div class="padding margin">
