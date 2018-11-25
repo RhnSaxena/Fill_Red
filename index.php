@@ -44,7 +44,7 @@
 							About Us
 						</li>
 						<li>
-							Register as a donor
+							<a href="checkRequests.php">Check Your Requests</a>
 						</li>
 						<li>
 							Blood Tips
@@ -60,10 +60,10 @@
 			<div class="content">
 				<h2>Search Blood Donors</h2>
 				<div class="main-form">
-					<form action="search.php" method="POST">
+					<form action="search.php" method="POST"><div class="col"><span class="float-right" style="font-size: 20px;">Blood Group :</span></div>
 						<div class="col">
 							<select class="input" name="DBloodGroup" required id="DBloodGroup" required>
-										<option>Blood Group</option>
+										<option></option>
 										<option value="A+">A+</option>
 										<option value="A-">A-</option>
 										<option value="B+">B+</option>
@@ -77,7 +77,7 @@
 						<div class="col margin-4"><input class="input" type="submit" value="Submit"></div>
 					</form>
 					<div class="margin-60">
-						<h4>*Terms and Conditions apply</h4>
+						<h4>*T&C apply</h4>
 					</div>
 				</div>
 			</div>

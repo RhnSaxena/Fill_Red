@@ -31,11 +31,11 @@
 			<center><img class="head-img" src="blood-bank.png"></center>
 		</div>
 		<div class="row">
-			<span class=""><a href="./index.php">Home</a>/Request Blood</span>
+			<span class=""><a href="./index.php">Home</a>/Check Request</span>
 		</div>
 		<div class="row card black-text border">
 			<div class="black-text padding">
-				<h2 class="heading">Request Blood</h2>
+				<h2 class="heading">Check Request</h2>
 				<div class="row">
 					<form action="placeRequest.php" method="post" class="align-column">
 
