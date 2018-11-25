@@ -3,8 +3,7 @@
 }
 
 .form-control {
-	font-size: 12px;
-	border:1px solid black;
+	margin: 5px;
 	border-radius: 3px;
 	width: 100%;
 	-moz-box-sizing:border-box;
@@ -25,9 +24,4 @@
 	margin-left: 100px;
 }
 
-form{
-	margin:0 auto;
-	width: 70%;
-	padding: 15px;
-}
 

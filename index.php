@@ -62,19 +62,19 @@
 				<div class="main-form">
 					<form action="search.php" method="POST">
 						<div class="col">
-							<select name="bloodGroup" class="input">
-							<option value="select">Select Blood Group</option>
-							<option value="a+">A+</option>
-							<option value="a-">A-</option>
-							<option value="b+">B+</option>
-							<option value="b-">B-</option>
-							<option value="o+">O+</option>
-							<option value="o-">O-</option>
-							<option value="ab+">AB+</option>
-							<option value="ab-">AB-</option>
-							</select>
+							<select class="input" name="DBloodGroup" required id="DBloodGroup" required>
+										<option>Blood Group</option>
+										<option value="A+">A+</option>
+										<option value="A-">A-</option>
+										<option value="B+">B+</option>
+										<option value="B-">B-</option>
+										<option value="AB+">AB+</option>
+										<option value="AB-">AB-</option>
+										<option value="O+">O+</option>
+										<option value="O-">O-</option>
+										</select>
 						</div>
-						<div class="col margin-4"><button type="submit" class="input">Search</button></div>
+						<div class="col margin-4"><input class="input" type="submit" value="Submit"></div>
 					</form>
 					<div class="margin-60">
 						<h4>*Terms and Conditions apply</h4>
