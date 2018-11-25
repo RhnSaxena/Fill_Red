@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2018 at 07:52 AM
+-- Generation Time: Nov 25, 2018 at 12:38 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -76,7 +76,8 @@ CREATE TABLE `donor` (
 --
 
 INSERT INTO `donor` (`dId`, `dFname`, `dLname`, `dAge`, `DBloodGroup`, `dSex`, `dAddress`, `dCity`, `dPincode`, `dPhoneNo`) VALUES
-('1212', 'rakshak', 'malhotra', 20, 'b+', 'male', 'b101', 'jabalpur', 665577, 12121432),
+('1212', 'rakshak', 'malhotra', 20, 'B+', 'male', 'b101', 'jabalpur', 665577, 12121432),
+('rhn', 'Rohan', 'Saxena', 20, 'A+', 'MALE', 'a2 203 srs royal hills', 'Faridabad', 121002, 2147483647),
 ('sd', 'SID', 'DIS', 20, 'ab+', 'male', 'sadda haqq', 'lucknow', 482005, 23221312);
 
 -- --------------------------------------------------------
@@ -118,9 +119,9 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`pid`, `pFName`, `pLName`, `pSex`, `pAge`, `pAdress`, `pPhoneNo`, `pBloodGroup`, `p_pincode`, `p_city`) VALUES
-('kl', 'rohan', 'Saxena', 'Male', 20, 'a2', 88888888, 'a+', 121002, 'faridabad'),
-('sd', 'SID', 'DIS', '20', 0, 'male', 0, 'luc', 482005, '23221312'),
-('wq', 'rohan', 'Saxena', 'Male', 20, 'a2', 88888888, 'a+', 12, 'Faridabad');
+('kl', 'rohan', 'Saxena', 'Male', 20, 'a2', 88888888, 'A+', 121002, 'faridabad'),
+('sd', 'SID', 'DIS', '20', 0, 'male', 0, 'B-', 482005, '23221312'),
+('wq', 'rohan', 'Saxena', 'Male', 20, 'a2', 88888888, 'A+', 12, 'Faridabad');
 
 -- --------------------------------------------------------
 
@@ -141,7 +142,9 @@ CREATE TABLE `request` (
 
 INSERT INTO `request` (`rid`, `pId`, `date`, `units`) VALUES
 ('', 'kl', '2018-11-23', 1),
-('12', 'kl', '2018-11-23', 1);
+('12', 'kl', '2018-11-23', 1),
+('121', 'sd', '2018-11-23', 1),
+('asda', 'sd', '2018-11-23', 10);
 
 -- --------------------------------------------------------
 
@@ -159,9 +162,9 @@ CREATE TABLE `volunteer` (
 --
 
 INSERT INTO `volunteer` (`vId`, `dId`) VALUES
-('', ''),
 ('12', '12'),
-('1212', '1212');
+('1212', '1212'),
+('rhn', 'rhn');
 
 --
 -- Indexes for dumped tables
