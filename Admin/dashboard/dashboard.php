@@ -34,21 +34,26 @@
       echo $_SESSION["username"];
     ?>
   <ul>
-  <li>
-  	<a href="#registerDonor">Register a Donor</a>
-  </li>
-  <li>
-  	<a href="#registerPatient">Register a Pateint</a>
-  </li>
-  <li>
-  	<a href="#IssueBlood">Issue Blood</a>
-  </li>
-  <li>
-  	<a href="#addInInventory">Add in Inventory</a>
-  </li>
-  <li>
-  	<a href="#check">Check Availability</a>
-  </li>
+  <a href="#registerDonor">
+    <li>
+     Register a Donor
+  </li></a>
+  <a href="#registerPatient">
+    <li>
+     Register a Pateint
+  </li></a>
+  <a href="#IssueBlood">
+    <li>
+     Issue Blood
+  </li></a>
+  <a href="#check">
+    <li>
+    Check Availability
+  </li></a>
+  <a href="#addInInventory">
+    <li>
+     Add in Inventory
+  </li></a>
   </ul>
   
 </nav>
