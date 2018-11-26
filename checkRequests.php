@@ -37,7 +37,7 @@
 			<div class="black-text padding">
 				<h2 class="heading">Check Request</h2>
 				<div class="row">
-					<form action="placeRequest.php" method="post" class="align-column">
+					<form action="actionOnRequest.php" method="post" class="align-column">
 
 						<div class="align-row">
 							<div class="col margin-auto">

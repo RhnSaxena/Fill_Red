@@ -53,7 +53,7 @@
 							while ($row = mysqli_fetch_array($result)) {
 									if($row['pFName']==$_POST['pFname'] && $row['pLName']==$_POST['pLname']){
 										if($row['pBloodGroup']==$_POST['pBloodGroup']){
-											$sql='INSERT INTO request VALUES ("'.$_POST['rid'].'","'.$_POST['pId'].'","'.$_POST['date'].'","'.$_POST['units'].'")';
+											$sql='INSERT INTO request VALUES ("'.$_POST['rid'].'","'.$_POST['pId'].'","'.$_POST['date'].'","'.$_POST['units'].'","0")';
 											echo "<br><br>";
 											mysqli_query($connection,$sql);
 											echo "<br><br>";
