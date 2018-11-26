@@ -35,7 +35,7 @@
 				$sql='INSERT INTO donor VALUES ("'.$_POST['dId'].'","'.$_POST['dFname'].'","'.$_POST['dLname'].'", '.$_POST['dAge'].',"'.$_POST['DBloodGroup'].'", "'.$_POST['dSex'].'","'.$_POST['dAddress'].'","'.$_POST['dCity'].'", '.$_POST['dPincode'].', '.$_POST['dPhoneNo'].') ';
 				mysqli_query($connection,$sql);
 				if(!mysqli_error($connection)){
-					echo'<h1 class="heading">Heading</h1>';
+					echo'<h1 class="heading">Success</h1>';
 				}
 				else{
 					echo'<h1 class="heading">OOPS!</h1>';
