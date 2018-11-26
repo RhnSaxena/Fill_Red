@@ -8,7 +8,7 @@ a{
 }
 
 html,body,head{
-  font-family: 'Open Sans',Arial,sans-serif;
+  font-family: 'Raleway', sans-serif;
   line-height: 1.5;
   text-align:center;
 }
@@ -52,4 +52,8 @@ li:hover{
   left:20%;
   width:76%;
   text-align:left;
+}
+
+span{
+  font-weight: bold;
 }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "./DB/DbConnection.php";
+include "../DB/DbConnection.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $usr=$_POST["username"];
@@ -8,10 +8,10 @@ $password=$_POST["password"];
 
 $sql = 'SELECT * FROM admin WHERE userid="'.$usr.'"';
 
-$result = $conn->query($sql);
+$result = mysqli_query($connection,$sql);
 
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
     	if($usr==$row["userid"]){
     		if($password==$row["password"]){
     			echo "Loggin Successfull";
@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
                 $_SESSION["password"]=$password;
                 $_SESSION["active"]=1;
                 $_SESSION['logged_in'] = true;
-    			header( "refresh:1;url=../profile.php" );
+    			header( "refresh:1;url=./dashboard/dashboard.php" );
     		}else{
     			$_SESSION['error'] = "You have entered wrong password, try again!";
                 header("refresh:1;url=message.php" );
@@ -33,9 +33,9 @@ if ($result->num_rows > 0) {
     }
 } else {
     $_SESSION['error'] = "User with that username doesn't exist!";
-    header("refresh:5;url=message.php" );
+    header("refresh:1;url=message.php" );
 }
 }else{
-    header("refresh:1;url=../index.php" );
+    header("refresh:1;url=./index.php" );
 }
 ?>

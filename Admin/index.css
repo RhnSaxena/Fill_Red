@@ -198,3 +198,7 @@ input[type="checkbox"]{
   margin-top: 0 auto;
   text-align: center;
 }
+
+nav{
+  font-family: 'Raleway', sans-serif;
+}
