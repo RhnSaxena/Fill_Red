@@ -39,6 +39,16 @@
 		<div class="row card black-text border">
 			<div class="black-text padding">
 				<h2 class="heading">Available Donor</h2>
+
+				<div class="align-row row-3">
+					<div class="float-left col">Name</div>
+					<div class="float-center col">Sex</div>
+					<div class="float-right col">
+					Blood Group
+					</div>
+				</div>
+					<br>
+
 				<?php
 					include "./DB/DbConnection.php";
 						if ($_SERVER['REQUEST_METHOD'] == 'POST') { 

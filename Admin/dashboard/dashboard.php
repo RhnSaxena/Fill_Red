@@ -64,6 +64,10 @@
     </div>
   </div>
 
+  <br>
+  <br>
+  <hr>
+
   <div class="row">
     <div class="col">
       <h1>Register a Patient</h1>

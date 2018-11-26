@@ -37,29 +37,49 @@
 		</div>
 		<div class="row card black-text border">
 			<div class="black-text padding">
-				<h2 class="heading">Registration</h2>
-				<div class="row padding">
+				<h2 class="heading">Place Request</h2>
+				<div class="row">							
 				<?php
-					session_start();
-					include "./DB/DbConnection.php";
-						if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-							$sql='INSERT INTO patient VALUES ("'.$_POST['pid'].'","'.$_POST['pFNAME'].'","'.$_POST['PLNAME'].'","'.$_POST['pSEX'].'", '.$_POST['pAge'].', "'.$_POST['pAddress'].'", '.$_POST['pPhoneNo'].',"'.$_POST['pBloodGroup'].'",'.$_POST['p_pincode'].',"'.$_POST['p_city'].'") ';
 
-							echo "<br><br>";
-							mysqli_query($connection,$sql);
-							if(!mysqli_error($connection)){
-								echo"<div>";
-								echo "Your request has been successfully placed.</div><div>";
-								echo "Your Patient Identificaion No. is : ";
-								echo $_POST['pid'];
-								echo"</div><div>";
-								echo "</div>Please note your Patient Identificaion No. for further references.";
+				session_start();
+				include "./DB/DbConnection.php";
+					if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
+						$_POST['date']=date("Y-m-d");
+						$query='SELECT * FROM patient WHERE patient.pId="'.$_POST['pId'].'"';
+						$result = mysqli_query($connection,$query);
+						if(mysqli_num_rows($result)>0){
+							while ($row = mysqli_fetch_array($result)) {
+									if($row['pFName']==$_POST['pFname'] && $row['pLName']==$_POST['pLname']){
+										if($row['pBloodGroup']==$_POST['pBloodGroup']){
+											$sql='INSERT INTO request VALUES ("'.$_POST['rid'].'","'.$_POST['pId'].'","'.$_POST['date'].'","'.$_POST['units'].'")';
+											echo "<br><br>";
+											mysqli_query($connection,$sql);
+											echo "<br><br>";
+											if(!mysqli_error($connection)){
+												echo"<div>Your request has been successfully placed.</div>";
+												echo"<div>Your request no. is : ";
+												echo $_POST['rid'];
+												echo"</div>";
+												echo"<div>Please note your Request Number for further references.</div>";
+											}
+											else{
+												echo"Some error Occurred. Please check the input.";
+											}
+										}
+										else echo "Blood Group doesn't matches";
+									}
+									else echo "Name entered doesn't matches with the donor's name";
+								}
 							}
-							else	echo mysqli_error($connection);
+						else{
+							echo"Donor Identification No. doesn't exist";
 						}
+					}
+					
 						else{
 							header("location: index.php");
 						}
+
 				?>
 				</div>
 				<div style="text-align: right;">*T&C apply
@@ -69,4 +89,3 @@
 	</div>
 </body>
 <html>
-
