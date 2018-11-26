@@ -69,7 +69,8 @@ span{
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  max-width: 50% !important;
+  min-width: 50% !important;
+  min-height:50vh !important;
   margin: 0 auto;
   margin-top: 15px;
   padding: 15px;
@@ -138,3 +139,29 @@ span{
   color: white;
 }
 
+
+.head-img{
+  width: 15px;  
+  margin-top: 0 auto;
+  text-align: center;
+}
+
+.container{
+  margin: 0;
+  padding: 15px;
+}
+.row{
+  width: 100%;
+  display: grid;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.card-header{
+  margin:0 auto;
+  margin-top: 15vh;
+}
