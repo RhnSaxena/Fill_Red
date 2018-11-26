@@ -36,11 +36,11 @@
 			<center><img class="head-img" src="blood-bank.png"></center>
 		</div>
 		<div class="row">
-			<span class=""><a href="./index.php">Home</a>/Check Request</span>
+			<span class=""><a href="./index.php">Home</a>/Register Volunteer</span>
 		</div>
 		<div class="row card black-text border">
 			<div class="black-text padding">
-				<h2 class="heading">Place Request</h2>
+				<h2 class="heading">Register Volunteer</h2>
 				<div class="row">
 				</div>
 				
