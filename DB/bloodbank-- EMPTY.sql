@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2018 at 10:54 PM
+-- Generation Time: Nov 26, 2018 at 08:22 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -50,17 +50,6 @@ CREATE TABLE `availability` (
   `bId` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `availability`
---
-
-INSERT INTO `availability` (`bId`) VALUES
-('b10002'),
-('b10003'),
-('b10004'),
-('b10005'),
-('b10006');
-
 -- --------------------------------------------------------
 
 --
@@ -72,20 +61,6 @@ CREATE TABLE `blood` (
   `donationDate` date NOT NULL,
   `dId` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `blood`
---
-
-INSERT INTO `blood` (`bId`, `donationDate`, `dId`) VALUES
-('12', '2018-01-06', '1'),
-('2', '2018-01-16', '1'),
-('b10001', '0000-00-00', '1'),
-('b10002', '0000-00-00', '2'),
-('b10003', '2018-11-26', '2'),
-('b10004', '2018-11-26', '2'),
-('b10005', '2018-11-26', '43'),
-('b10006', '2018-11-26', '1');
 
 --
 -- Triggers `blood`
@@ -114,17 +89,6 @@ CREATE TABLE `donor` (
   `dPhoneNo` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `donor`
---
-
-INSERT INTO `donor` (`dId`, `dFname`, `dLname`, `dAge`, `DBloodGroup`, `dSex`, `dAddress`, `dCity`, `dPincode`, `dPhoneNo`) VALUES
-('1', 'djskgufyu', 'dguisfgwuies', 34, 'A+', 'MALE', 'asfsdgfwes', 'gurgaon', 3826, 12436776),
-('2', 'asdas', 'sdter', 45, 'B-', 'FEMALE', 'asd', 'asd', 123456, 2147483647),
-('d10001', 'Rohan', 'Saxena', 20, 'A+', 'MALE', 'D205', 'Faridabad', 121002, 2147483647),
-('d10002', 'siddharth', 'verma', 21, 'B+', 'MALE', '102', '102', 102, 102),
-('wqrw', 'sbahdj', 'jsadhaj', 3, 'AB-', 'MALE', 'dsfsdf', 'khjkjkl', 2345565, 5555555);
-
 -- --------------------------------------------------------
 
 --
@@ -144,7 +108,7 @@ CREATE TABLE `inc` (
 --
 
 INSERT INTO `inc` (`dId`, `pId`, `rid`, `bid`, `vId`) VALUES
-(10002, 10000, 10021, 10006, 10001);
+(10000, 10000, 10000, 10000, 10000);
 
 -- --------------------------------------------------------
 
@@ -157,16 +121,6 @@ CREATE TABLE `infusion_history` (
   `pId` varchar(10) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `infusion_history`
---
-
-INSERT INTO `infusion_history` (`bId`, `pId`, `date`) VALUES
-('', '43', '2018-11-26'),
-('12', '43', '2018-11-26'),
-('2', '43', '2018-11-26'),
-('b10001', '43', '2018-11-26');
 
 --
 -- Triggers `infusion_history`
@@ -195,13 +149,6 @@ CREATE TABLE `patient` (
   `p_city` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `patient`
---
-
-INSERT INTO `patient` (`pid`, `pFName`, `pLName`, `pSex`, `pAge`, `pAdress`, `pPhoneNo`, `pBloodGroup`, `p_pincode`, `p_city`) VALUES
-('43', '3', '4', 'MALE', 20, '5', 6, 'A+', 7, '8');
-
 -- --------------------------------------------------------
 
 --
@@ -216,20 +163,6 @@ CREATE TABLE `request` (
   `unitsRecieved` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `request`
---
-
-INSERT INTO `request` (`rid`, `pId`, `date`, `units`, `unitsRecieved`) VALUES
-('r10014', '43', '2018-11-26', 7, 5),
-('r10015', '43', '2018-11-26', 7, 4),
-('r10016', '43', '2018-11-26', 7, 0),
-('r10017', '43', '2018-11-26', 7, 0),
-('r10018', '43', '2018-11-26', 7, 0),
-('r10019', '43', '2018-11-26', 7, 0),
-('r10020', '43', '2018-11-26', 7, 0),
-('r10021', '43', '2018-11-26', 7, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -240,14 +173,6 @@ CREATE TABLE `volunteer` (
   `vId` varchar(10) NOT NULL,
   `dId` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `volunteer`
---
-
-INSERT INTO `volunteer` (`vId`, `dId`) VALUES
-('d10001', 'd10001'),
-('v10001', 'd10002');
 
 --
 -- Indexes for dumped tables

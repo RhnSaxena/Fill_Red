@@ -38,11 +38,11 @@
 				
 				$date=date("Y-m-d");
 				$patientBG = 'SELECT pBloodGroup FROM patient WHERE pid = "'.$_POST['pId'].'" ';
-				$check = 'SELECT B.bId FROM availability A, donor D, blood B WHERE A.bId = B.bId AND B.dId = D.dId AND D.DBloodGroup = "'.$patientBG.'" ';
+				$check = 'SELECT B.bId FROM availability A, donor D, blood B WHERE A.bId = B.bId AND B.dId = D.dId AND D.DBloodGroup =( '.$patientBG.' )';
 				$result = mysqli_query($connection,$check);
 				if(mysqli_num_rows($result)>0){
 					$row = mysqli_fetch_array($result);
-						$bId = $row['B.bId'];
+						$bId = $row['bId'];
 					
 				
 					$sql='INSERT INTO infusion_history VALUES("'.$bId.'","'.$_POST['pId'].'","'.$date.'")';
@@ -66,7 +66,7 @@
 						}
 				}
 				else{
-					echo "There is no Blood Group available for the requested type"
+					echo "There is no Blood Group available for the requested type";
 				}
 			}
 			?>

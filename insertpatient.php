@@ -1,6 +1,6 @@
 
 
-<!doc\type html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -42,8 +42,15 @@
 				<?php
 					session_start();
 					include "./DB/DbConnection.php";
+					include "inc.php";
 						if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-							$sql='INSERT INTO patient VALUES ("'.$_POST['pid'].'","'.$_POST['pFNAME'].'","'.$_POST['PLNAME'].'","'.$_POST['pSEX'].'", '.$_POST['pAge'].', "'.$_POST['pAddress'].'", '.$_POST['pPhoneNo'].',"'.$_POST['pBloodGroup'].'",'.$_POST['p_pincode'].',"'.$_POST['p_city'].'") ';
+
+						$pid=generateId("pid");
+						$vid=generateId("vid");
+						$date=date("Y-m-d");
+						$_POST['date']=date("Y-m-d");
+
+							$sql='INSERT INTO patient VALUES ("'.$pid.'","'.$_POST['pFNAME'].'","'.$_POST['PLNAME'].'","'.$_POST['pSEX'].'", '.$_POST['pAge'].', "'.$_POST['pAddress'].'", '.$_POST['pPhoneNo'].',"'.$_POST['pBloodGroup'].'",'.$_POST['p_pincode'].',"'.$_POST['p_city'].'") ';
 
 							echo "<br><br>";
 							mysqli_query($connection,$sql);
@@ -51,7 +58,7 @@
 								echo"<div>";
 								echo "Your request has been successfully placed.</div><div>";
 								echo "Your Patient Identificaion No. is : ";
-								echo $_POST['pid'];
+								echo $pid;
 								echo"</div><div>";
 								echo "</div>Please note your Patient Identificaion No. for further references.";
 							}

@@ -52,7 +52,7 @@
 				<?php
 					include "./DB/DbConnection.php";
 						if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-							$query='SELECT * FROM donor,volunteer WHERE donor.did=volunteer.vid AND donor.DBloodGroup="'.$_POST['DBloodGroup'].'"';
+							$query='SELECT * FROM donor,volunteer WHERE donor.did=volunteer.did AND donor.DBloodGroup="'.$_POST['DBloodGroup'].'"';
 							$result = mysqli_query($connection,$query);
 							if(mysqli_num_rows($result)>0){
 								while ($row = mysqli_fetch_array($result)) {
