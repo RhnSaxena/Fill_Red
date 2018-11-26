@@ -19,12 +19,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
  
    <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 
   <link rel="icon" type="image/png" sizes="96x96" href="">
-
+  
+  
 </head>
 
 <body>
@@ -41,7 +43,10 @@
 					echo'<h1 class="heading">OOPS!</h1>';
 				}
       
-				echo'</div><div class="row"><div class="card"><div class="card-header">';
+				echo'</div><div class="row text-center">
+				<h1 class="heading"><a href="dashboard.php"><i class="fas fa-home"></i></a>
+				</h1>
+				</div><div class="row"><div class="card"><div class="card-header">';
 				echo'<br><br>';
 				if(!mysqli_error($connection)){
 					echo"Donor has been registered successfully";	

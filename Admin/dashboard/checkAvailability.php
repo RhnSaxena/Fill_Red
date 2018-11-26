@@ -33,25 +33,28 @@
     <div class="row text-center">
 	<?php
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-				$sql='INSERT INTO patient VALUES ("'.$_POST['pid'].'","'.$_POST['pFNAME'].'","'.$_POST['PLNAME'].'","'.$_POST['pSEX'].'", '.$_POST['pAge'].', "'.$_POST['pAddress'].'", '.$_POST['pPhoneNo'].',"'.$_POST['pBloodGroup'].'",'.$_POST['p_pincode'].',"'.$_POST['p_city'].'") ';
-
-				mysqli_query($connection,$sql);
-				if(!mysqli_error($connection)){
-					echo'<h1 class="heading">Success</h1>';
-				}
-				else{
-					echo'<h1 class="heading">OOPS!</h1>';
-				}
+				$sql='SELECT D.DBloodGroup as Blood_Group , count(*) as count FROM availability A, donor D, blood B WHERE A.bId = B.bId AND B.dId = D.dId AND D.DBloodGroup = "'.$_POST['DBloodGroup'].'" ';
+					echo'<h1 class="heading">Availability</h1>';
+				$result = mysqli_query($connection,$sql);
 				echo'</div><div class="row text-center">
 				<h1 class="heading"><a href="dashboard.php"><i class="fas fa-home"></i></a>
 				</h1>
 				</div><div class="row"><div class="card"><div class="card-header">';
 				echo'<br><br>';
-				if(!mysqli_error($connection)){
-					echo"Patient has been registered successfully";	
-				}	
+				
+								if(mysqli_num_rows($result)>0){
+									
+									while ((($row = mysqli_fetch_array($result))) ) {
+										echo '<div class="align-row row-3">
+											<div class="float-left col">'.$row['Blood_Group'].'</div>';
+										echo '<div class="float-center col">'.$row['count'].'</div>';
+										echo "<br>";
+										
+									}
+								}
+								
 				else{
-					echo"There was an error while registering the patient. Do check the credentials or try again later.";
+					echo"There is no Blood Available of the required Blood Group.";
 				}
 			}
 			?>
