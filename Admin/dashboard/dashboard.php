@@ -101,7 +101,7 @@
 
   <div class="row" id="IssueBlood">
     <div class="col">
-      <h1>Issue Blood</h1>
+      <h1>Issue Blood to Pateint</h1>
       <?php
         include "issue.html";
       ?>
@@ -114,7 +114,7 @@
 
   <div class="row" id="addInInventory">
     <div class="col">
-      <h1>Add Blood</h1>
+      <h1>Blood Donation</h1>
       <?php
         include "addBlood.html";
       ?>
