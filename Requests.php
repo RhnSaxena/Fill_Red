@@ -57,7 +57,7 @@
 									}
 								}
 								else{
-									echo"0 ";
+									echo"No Requests at the moment.";
 								}
 							?>
 				<div class="row">

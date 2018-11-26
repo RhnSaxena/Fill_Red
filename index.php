@@ -119,7 +119,7 @@
 									}
 								}
 								else{
-									echo"0 ";
+									echo"No Blood Requests at the moment.";
 								}
 							?>
 						</span>
@@ -136,7 +136,7 @@
 									}
 								}
 								else{
-									echo"0 ";
+									echo"No Active Donors at the moment.";
 								}
 							?>
 						</span>
@@ -185,7 +185,7 @@
 									}
 								}
 								else{
-									echo"0 ";
+									echo"No Requests at the moment.";
 								}
 							?>
 					</div>
