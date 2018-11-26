@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include "./DB/DbConnection.php";
+include "../../DB/DbConnection.php";
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
 		$sql='INSERT INTO donor VALUES ("'.$_POST['dId'].'","'.$_POST['dFname'].'","'.$_POST['dLname'].'", '.$_POST['dAge'].',"'.$_POST['DBloodGroup'].'", "'.$_POST['dSex'].'","'.$_POST['dAddress'].'","'.$_POST['dCity'].'", '.$_POST['dPincode'].', '.$_POST['dPhoneNo'].') ';

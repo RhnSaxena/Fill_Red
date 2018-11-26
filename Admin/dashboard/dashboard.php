@@ -47,7 +47,7 @@
   	<a href="#addInInventory">Add in Inventory</a>
   </li>
   <li>
-  	<a href="#register">Check Availability</a>
+  	<a href="#check">Check Availability</a>
   </li>
   </ul>
   
@@ -55,7 +55,7 @@
 
 <main id="main-doc">
 
-  <div class="row">
+  <div class="row" id="registerDonor">
     <div class="col">
       <h1>Register a Donor</h1>
       <?php
@@ -68,11 +68,37 @@
   <br>
   <hr>
 
-  <div class="row">
+  <div class="row" id="registerPatient">
     <div class="col">
       <h1>Register a Patient</h1>
       <?php
         include "insertPatient.html";
+      ?>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <hr>
+
+  <div class="row" id="check">
+    <div class="col">
+      <h1>Check Availability</h1>
+      <?php
+        include "check.html";
+      ?>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <hr>
+
+  <div class="row" id="addInInventory">
+    <div class="col">
+      <h1>Add Blood</h1>
+      <?php
+        include "addBlood.html";
       ?>
     </div>
   </div>
