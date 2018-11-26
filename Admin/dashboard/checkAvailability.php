@@ -32,22 +32,23 @@
     <div class="container">
     <div class="row text-center">
 	<?php
-		if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-				$sql='SELECT D.DBloodGroup as Blood_Group , count(*) as count FROM availability A, donor D, blood B WHERE A.bId = B.bId AND B.dId = D.dId AND D.DBloodGroup = "'.$_POST['DBloodGroup'].'" ';
-					echo'<h1 class="heading">Availability</h1>';
-				$result = mysqli_query($connection,$sql);
+		echo'<h1 class="heading">Availability</h1>';
 				echo'</div><div class="row text-center">
 				<h1 class="heading"><a href="dashboard.php"><i class="fas fa-home"></i></a>
 				</h1>
-				</div><div class="row"><div class="card"><div class="card-header">';
+				</div><div class="row"><div class="card"><div class="card-header" style="margin-top:-5px;">';
 				echo'<br><br>';
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
+				$sql='SELECT D.DBloodGroup as Blood_Group , count(*) as count FROM availability A, donor D, blood B WHERE A.bId = B.bId AND B.dId = D.dId AND D.DBloodGroup = "'.$_POST['DBloodGroup'].'" GROUP BY D.DBloodGroup';
+					
+				$result = mysqli_query($connection,$sql);
 				
 								if(mysqli_num_rows($result)>0){
 									
 									while ((($row = mysqli_fetch_array($result))) ) {
-										echo '<div class="align-row row-3">
-											<div class="float-left col">'.$row['Blood_Group'].'</div>';
-										echo '<div class="float-center col">'.$row['count'].'</div>';
+										echo '<div class="align-row">
+											<div style="margin:0 auto; font-size:50px;">'.$row['Blood_Group'];
+										echo '<br>'.$row['count'].'</div>';
 										echo "<br>";
 										
 									}

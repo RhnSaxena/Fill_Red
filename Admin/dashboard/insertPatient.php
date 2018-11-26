@@ -32,8 +32,15 @@
     <div class="container">
     <div class="row text-center">
 	<?php
-		if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-				$sql='INSERT INTO patient VALUES ("'.$_POST['pid'].'","'.$_POST['pFNAME'].'","'.$_POST['PLNAME'].'","'.$_POST['pSEX'].'", '.$_POST['pAge'].', "'.$_POST['pAddress'].'", '.$_POST['pPhoneNo'].',"'.$_POST['pBloodGroup'].'",'.$_POST['p_pincode'].',"'.$_POST['p_city'].'") ';
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+			include 'inc.php';
+
+						$pid=generateId("pid");
+						$date=date("Y-m-d");
+						$_POST['date']=date("Y-m-d");
+
+				$sql='INSERT INTO patient VALUES ("'.$pid.'","'.$_POST['pFNAME'].'","'.$_POST['PLNAME'].'","'.$_POST['pSEX'].'", '.$_POST['pAge'].', "'.$_POST['pAddress'].'", '.$_POST['pPhoneNo'].',"'.$_POST['pBloodGroup'].'",'.$_POST['p_pincode'].',"'.$_POST['p_city'].'") ';
 
 				mysqli_query($connection,$sql);
 				if(!mysqli_error($connection)){

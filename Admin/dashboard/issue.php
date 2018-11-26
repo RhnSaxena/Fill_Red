@@ -31,12 +31,22 @@
 <body>
     <div class="container">
     <div class="row text-center">
+
 	<?php
+	echo'</div><div class="row text-center">
+					<h1 class="heading"><a href="dashboard.php"><i class="fas fa-home"></i></a>
+					</h1>
+					</div><div class="row"><div class="card"><div class="card-header">';
+					echo'<br><br>';
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
 		
 				include 'inc.php';
 				
 				$date=date("Y-m-d");
+				$existence = 'SELECT * FROM patient WHERE pId = "'.$_POST['pId'].'" ';
+				$result1 =	mysqli_query($connection,$existence);
+
+				if(mysqli_num_rows($result1)>0){
 				$patientBG = 'SELECT pBloodGroup FROM patient WHERE pid = "'.$_POST['pId'].'" ';
 				$check = 'SELECT B.bId FROM availability A, donor D, blood B WHERE A.bId = B.bId AND B.dId = D.dId AND D.DBloodGroup =( '.$patientBG.' )';
 				$result = mysqli_query($connection,$check);
@@ -53,20 +63,21 @@
 					else{
 						echo'<h1 class="heading">OOPS!</h1>';
 					}
-					echo'</div><div class="row text-center">
-					<h1 class="heading"><a href="dashboard.php"><i class="fas fa-home"></i></a>
-					</h1>
-					</div><div class="row"><div class="card"><div class="card-header">';
-					echo'<br><br>';
+					
 					if(!mysqli_error($connection)){
-						echo"Patient has been registered successfully";	
+						echo"Patient has received the Blood ";	
 					}	
 					else{
-						echo"There was an error while registering the patient. Do check the credentials or try again later.";
+						echo"There was an error while infusing the Blood. Do check the credentials or try again later.";
 						}
 				}
 				else{
 					echo "There is no Blood Group available for the requested type";
+				}
+
+			}
+				else{
+					echo "The entered ID does not exist in the Patient's Record";
 				}
 			}
 			?>

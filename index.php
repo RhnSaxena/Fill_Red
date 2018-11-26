@@ -144,7 +144,7 @@
 				</div>
 			</div>
 			<div class="align-row">
-				<div class="card margin"> <h3>Blood Donate Tips</h3><br>
+				<div class="card margin"> <h3>Blood Donate Tips</h3><hr>
 					<ol ">
 						<li class="margin-4">
 							Eat and drink wisely
@@ -164,7 +164,7 @@
 					</ol>
 				</div>
 				<div class="card margin">
-					<h3><a href="Requests.php">Blood Requests</a></h3>
+					<h3><a href="Requests.php">Blood Requests</a></h3><hr>
 					<div class="padding margin">
 					<?php
 								$query='SELECT request.rid,pFName,pLName,pSex,pBloodGroup
@@ -191,7 +191,34 @@
 					</div>
 				
 				</div>
-				<div class="card margin"> <h3>Recent Donors</h3></div>
+				<div class="card margin"> <h3>Recent Donors</h3>
+					<hr><br>
+
+					<?php
+								$query='SELECT D.DBloodGroup , count(*) as count
+									FROM availability A, donor D, blood B
+									WHERE A.bId = B.bId
+									AND B.dId = D.dId
+									GROUP BY D.DBloodGroup';
+								
+								$result = mysqli_query($connection,$query);
+								if(mysqli_num_rows($result)>0){
+									$i=0;
+									while ((($row = mysqli_fetch_array($result))) && ($i<5)) {
+										echo '<div class="align-row row-3">
+											<div class="float-left col">'.$row['DBloodGroup'].'</div><div></div>';
+										
+										echo '<div class="float-right col"><span class="red-text">'.$row['count'].' </span></div></div>';
+										echo "<br>";
+										$i=$i+1;
+									}
+								}
+								else{
+									echo"No Requests at the moment.";
+								}
+							?>
+
+				</div>
 			</div>
 		</div>
 	</div>

@@ -34,7 +34,13 @@
     <div class="row text-center">
 	<?php
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-				$sql='INSERT INTO donor VALUES ("'.$_POST['dId'].'","'.$_POST['dFname'].'","'.$_POST['dLname'].'", '.$_POST['dAge'].',"'.$_POST['DBloodGroup'].'", "'.$_POST['dSex'].'","'.$_POST['dAddress'].'","'.$_POST['dCity'].'", '.$_POST['dPincode'].', '.$_POST['dPhoneNo'].') ';
+
+			include 'inc.php';
+
+						$did=generateId("did");
+						$date=date("Y-m-d");
+						$_POST['date']=date("Y-m-d");
+				$sql='INSERT INTO donor VALUES ("'.$did.'","'.$_POST['dFname'].'","'.$_POST['dLname'].'", '.$_POST['dAge'].',"'.$_POST['DBloodGroup'].'", "'.$_POST['dSex'].'","'.$_POST['dAddress'].'","'.$_POST['dCity'].'", '.$_POST['dPincode'].', '.$_POST['dPhoneNo'].') ';
 				mysqli_query($connection,$sql);
 				if(!mysqli_error($connection)){
 					echo'<h1 class="heading">Success</h1>';

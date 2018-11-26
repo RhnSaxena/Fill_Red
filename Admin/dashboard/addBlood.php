@@ -31,6 +31,11 @@
 <body>
     <div class="container">
     <div class="row text-center">
+    	</div><div class="row text-center">
+				<h1 class="heading"><a href="dashboard.php"><i class="fas fa-home"></i></a>
+				</h1>
+				</div><div class="row"><div class="card"><div class="card-header">
+				<br><br>
 	<?php
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
 				
@@ -38,7 +43,10 @@
 				
 				$bid=generateId("bid");
 				$date=date("Y-m-d");
-				
+				$existence = 'SELECT * FROM donor WHERE dId = "'.$_POST['dId'].'" ';
+				$result =	mysqli_query($connection,$existence);
+
+				if(mysqli_num_rows($result)>0){
 				$sql='INSERT INTO blood VALUES ("'.$bid.'","'.$date.'","'.$_POST['dId'].'")';
 
 				mysqli_query($connection,$sql);
@@ -48,16 +56,16 @@
 				else{
 					echo'<h1 class="heading">OOPS!</h1>';
 				}
-				echo'</div><div class="row text-center">
-				<h1 class="heading"><a href="dashboard.php"><i class="fas fa-home"></i></a>
-				</h1>
-				</div><div class="row"><div class="card"><div class="card-header">';
-				echo'<br><br>';
+				
 				if(!mysqli_error($connection)){
 					echo"Blood Donated Successfully";	
 				}	
 				else{
 					echo"There was an error while the donation process. Do try again later.";
+				}
+			}
+				else{
+					echo "The entered ID does not exist in the Donor's Record";
 				}
 			}
 			?>
