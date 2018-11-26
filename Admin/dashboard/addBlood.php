@@ -37,8 +37,7 @@
 				include 'inc.php';
 				
 				$bid=generateId("bid");
-				$now=time();
-				$date=date(Y-m-d,$now);
+				$date=date("Y-m-d");
 				
 				$sql='INSERT INTO blood VALUES ("'.$bid.'","'.$date.'","'.$_POST['dId'].'")';
 
