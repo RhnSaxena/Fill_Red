@@ -17,15 +17,13 @@
             $num=$d;
 
             $num+=1;
-            echo $num."<br>";
+           // echo $num."<br>";
 
             $sql="update inc set ".$for."='".$num."'";
 
             $result=mysqli_query($connection,$sql);
 
-            echo $num."<br>";
-            echo substr($for,0,1).$num;
+            //echo $num."<br>";
+            return substr($for,0,1).$num;
          }
-
-         generateId("rId");
 ?>
