@@ -16,9 +16,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
-
-  <link rel="stylesheet" href="dashboard.css">
+ 
+   <link rel="stylesheet" href="dashboard.css">
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
@@ -55,25 +54,24 @@
 </nav>
 
 <main id="main-doc">
-	<form id="registerDonor">
-		
-	</form>
 
-	<form id="registerPatient">
-		
-	</form>
+  <div class="row">
+    <div class="col">
+      <h1>Register a Donor</h1>
+      <?php
+        include "insertdonor.html";
+      ?>
+    </div>
+  </div>
 
-	<form id="IssueBlood">
-		
-	</form>
-
-	<form id="addInInventory">
-		
-	</form>
-
-	<form id="register">
-		
-	</form>
+  <div class="row">
+    <div class="col">
+      <h1>Register a Patient</h1>
+      <?php
+        include "insertPatient.html";
+      ?>
+    </div>
+  </div>
 	
 </main>
 
