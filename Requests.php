@@ -43,7 +43,8 @@
 					include "./DB/DbConnection.php";
 								$query='SELECT request.rid,pFName,pLName,pSex,pBloodGroup
 								FROM request,patient 
-								WHERE request.pId=patient.pId';
+								WHERE request.pId=patient.pId
+								AND unitsRecieved<units';
 								
 								$result = mysqli_query($connection,$query);
 								if(mysqli_num_rows($result)>0){
