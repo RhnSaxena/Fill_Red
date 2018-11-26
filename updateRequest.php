@@ -9,11 +9,11 @@
 			echo"SOME ERROR OCCURED TRY AGAIN";
 		}
 		else{
-			header("location: index.php");
+			header("refresh:2;url=index.php");
 		}
 	}
 	else{
-		header("location: index.php");
+		header("refresh:2;url=index.php");
 	}
 
 

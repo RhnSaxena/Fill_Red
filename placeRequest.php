@@ -1,6 +1,6 @@
 
 
-<!doc\type html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -46,6 +46,11 @@
 				session_start();
 				include "./DB/DbConnection.php";
 					if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
+						
+						include 'inc.php';
+
+						$rid=generateId("rid");
+						$date=date("Y-m-d");
 						$_POST['date']=date("Y-m-d");
 						$query='SELECT * FROM patient WHERE patient.pId="'.$_POST['pId'].'"';
 						$result = mysqli_query($connection,$query);
@@ -53,14 +58,14 @@
 							while ($row = mysqli_fetch_array($result)) {
 									if($row['pFName']==$_POST['pFname'] && $row['pLName']==$_POST['pLname']){
 										if($row['pBloodGroup']==$_POST['pBloodGroup']){
-											$sql='INSERT INTO request VALUES ("'.$_POST['rid'].'","'.$_POST['pId'].'","'.$_POST['date'].'","'.$_POST['units'].'","0")';
+											$sql='INSERT INTO request VALUES ("'.$rid.'","'.$_POST['pId'].'","'.$_POST['date'].'","'.$_POST['units'].'","0")';
 											echo "<br><br>";
-											mysqli_query($connection,$sql);
+											if(mysqli_query($connection,$sql)){
 											echo "<br><br>";
-											if(!mysqli_error($connection)){
+											//if(!mysqli_error($connection)){
 												echo"<div>Your request has been successfully placed.</div>";
 												echo"<div>Your request no. is : ";
-												echo $_POST['rid'];
+												echo $rid;
 												echo"</div>";
 												echo"<div>Please note your Request Number for further references.</div>";
 											}

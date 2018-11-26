@@ -3,7 +3,7 @@
 
 
 
-<!doc\type html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -49,20 +49,27 @@
 				session_start();
 				include "./DB/DbConnection.php";
 					if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-						$sql='INSERT INTO donor VALUES ("'.$_POST['dId'].'","'.$_POST['dFname'].'","'.$_POST['dLname'].'", '.$_POST['dAge'].',"'.$_POST['DBloodGroup'].'", "'.$_POST['dSex'].'","'.$_POST['dAddress'].'","'.$_POST['dCity'].'", '.$_POST['dPincode'].', '.$_POST['dPhoneNo'].') ';
+						include 'inc.php';
+
+						$did=generateId("did");
+						$vid=generateId("vid");
+						$date=date("Y-m-d");
+						$_POST['date']=date("Y-m-d");
+
+						$sql='INSERT INTO donor VALUES ("'.$did.'","'.$_POST['dFname'].'","'.$_POST['dLname'].'", '.$_POST['dAge'].',"'.$_POST['DBloodGroup'].'", "'.$_POST['dSex'].'","'.$_POST['dAddress'].'","'.$_POST['dCity'].'", '.$_POST['dPincode'].', '.$_POST['dPhoneNo'].') ';
 
 						echo "<br><br>";
 						mysqli_query($connection,$sql);
 						if(!mysqli_error($connection)){
-							$sql1='INSERT INTO volunteer VALUES ("'.$_POST['dId'].'","'.$_POST['dId'].'")';
+							$sql1='INSERT INTO volunteer VALUES ("'.$vid.'","'.$did.'")';
 							mysqli_query($connection,$sql1);
 							if(!mysqli_error($connection)){
 								echo"<div>Your request has been successfully placed.</div>";
 								echo"<div>Your Volunteer Identification no. is : ";
-			 					echo $_POST['dId'];
+			 					echo $vid;
 								echo"</div>";
 								echo"<div>Your Donor Identification no. is : ";
-			 					echo $_POST['dId'];
+			 					echo $did;
 								echo"</div>";
 								echo"<div>Please note your Request Number for further references.</div>";
 
