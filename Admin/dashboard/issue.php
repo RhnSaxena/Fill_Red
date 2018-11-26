@@ -37,25 +37,36 @@
 				include 'inc.php';
 				
 				$date=date("Y-m-d");
+				$patientBG = 'SELECT pBloodGroup FROM patient WHERE pid = "'.$_POST['pId'].'" ';
+				$check = 'SELECT B.bId FROM availability A, donor D, blood B WHERE A.bId = B.bId AND B.dId = D.dId AND D.DBloodGroup = "'.$patientBG.'" ';
+				$result = mysqli_query($connection,$check);
+				if(mysqli_num_rows($result)>0){
+					$row = mysqli_fetch_array($result);
+						$bId = $row['B.bId'];
+					
 				
-				$sql='INSERT INTO infusion_history VALUES("'.$_POST['pId'].'","'.$_POST['pFNAME'].'","'.$_POST['PLNAME'].'");
-				mysqli_query($connection,$sql);
-				if(!mysqli_error($connection)){
-					echo'<h1 class="heading">Success</h1>';
+					$sql='INSERT INTO infusion_history VALUES("'.$bId.'","'.$_POST['pId'].'","'.$date.'")';
+					mysqli_query($connection,$sql);
+					if(!mysqli_error($connection)){
+						echo'<h1 class="heading">Success</h1>';
+					}
+					else{
+						echo'<h1 class="heading">OOPS!</h1>';
+					}
+					echo'</div><div class="row text-center">
+					<h1 class="heading"><a href="dashboard.php"><i class="fas fa-home"></i></a>
+					</h1>
+					</div><div class="row"><div class="card"><div class="card-header">';
+					echo'<br><br>';
+					if(!mysqli_error($connection)){
+						echo"Patient has been registered successfully";	
+					}	
+					else{
+						echo"There was an error while registering the patient. Do check the credentials or try again later.";
+						}
 				}
 				else{
-					echo'<h1 class="heading">OOPS!</h1>';
-				}
-				echo'</div><div class="row text-center">
-				<h1 class="heading"><a href="dashboard.php"><i class="fas fa-home"></i></a>
-				</h1>
-				</div><div class="row"><div class="card"><div class="card-header">';
-				echo'<br><br>';
-				if(!mysqli_error($connection)){
-					echo"Patient has been registered successfully";	
-				}	
-				else{
-					echo"There was an error while registering the patient. Do check the credentials or try again later.";
+					echo "There is no Blood Group available for the requested type"
 				}
 			}
 			?>
