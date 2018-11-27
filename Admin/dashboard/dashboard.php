@@ -54,6 +54,10 @@
     <li>
      Add in Inventory
   </li></a>
+  <a href="#history">
+    <li>
+     Infusion History
+  </li></a>
   </ul>
   
 </nav>
@@ -117,6 +121,19 @@
       <h1>Blood Donation</h1>
       <?php
         include "addBlood.html";
+      ?>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <hr>
+
+  <div class="row" id="addInInventory">
+    <div class="col">
+      <h1>Blood Donation</h1>
+      <?php
+        include "history.php";
       ?>
     </div>
   </div>
