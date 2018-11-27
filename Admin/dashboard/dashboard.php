@@ -31,7 +31,7 @@
   
   <header id="main-heading"> <span>DashBoard</span></header><hr>
   	<?php 
-      echo $_SESSION["username"];
+      echo $_SESSION["username"]."<br><a href='../logout.php'>Logout</a>";
     ?>
   <ul>
   <a href="#registerDonor">
@@ -131,7 +131,7 @@
 
   <div class="row" id="history">
     <div class="col">
-      <h1>Blood Donation</h1>
+      <h1>Infusion History</h1>
       <?php
         include "history.php";
       ?>

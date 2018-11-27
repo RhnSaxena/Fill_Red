@@ -44,7 +44,7 @@
 							<a href="checkRequests.php">Check Your Requests</a>
 						</li>
 						<li>
-							<a>About Us</a>
+							<a href="insertPatient.html">Register Patient</a>
 						</li>
 						<li>
 							<a>Contact Us</a>
@@ -191,7 +191,7 @@
 					</div>
 				
 				</div>
-				<div class="card margin"> <h3>Recent Donors</h3>
+				<div class="card margin"> <h3>Available Blood</h3>
 					<hr><br>
 
 					<?php
@@ -204,7 +204,7 @@
 								$result = mysqli_query($connection,$query);
 								if(mysqli_num_rows($result)>0){
 									$i=0;
-									while ((($row = mysqli_fetch_array($result))) && ($i<5)) {
+									while ((($row = mysqli_fetch_array($result))) && ($i<8)) {
 										echo '<div class="align-row row-3">
 											<div class="float-left col">'.$row['DBloodGroup'].'</div><div></div>';
 										

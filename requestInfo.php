@@ -46,11 +46,11 @@
 							while ($row = mysqli_fetch_array($result)) {
 								
 								echo '<div class="align-row row-3">
-								<div class="float-left col">'.$row['pFName'].' '.$row['pLName'].'</div>';
-								echo '<div class="float-center col">'.$row['pSex'].'</div>';
-								echo '<div class="float-right col"><span class="red-text">'.$row['pBloodGroup'].' </span></div>';
-								echo '<div class="float-center col">'.$row['units'].'</div>';
-								echo '<div class="float-center col">'.$row['pPhoneNo'].'</div>';
+								<div class="float-left col"><b>Name: </b>'.$row['pFName'].' '.$row['pLName'].'</div>';
+								echo '<div class="float-center col"><b>Sex</b>: '.$row['pSex'].'</div>';
+								echo '<div class="float-right col"><span class="red-text"><b>Blood Group: </b>'.$row['pBloodGroup'].' </span></div>';
+								echo '<div class="float-center col"><b>Units: </b>'.$row['units'].'</div>';
+								echo '<div class="float-center col"><b>Phone No: </b>'.$row['pPhoneNo'].'</div>';
 								echo'</div>';
 							
 								}
