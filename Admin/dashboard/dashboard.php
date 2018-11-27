@@ -129,7 +129,7 @@
   <br>
   <hr>
 
-  <div class="row" id="addInInventory">
+  <div class="row" id="history">
     <div class="col">
       <h1>Blood Donation</h1>
       <?php
