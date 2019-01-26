@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include "./DB/DbConnection.php";
+	require "vendor/autoload.php";
 ?>
 <!doctype html>
 <html lang="en">
